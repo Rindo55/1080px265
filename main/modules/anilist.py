@@ -134,7 +134,12 @@ atext = """
 • Episodes: {}
 • Duration: {} mins/Ep**
 """
-
+async def get_anilistx_datax(name):
+    vars_ = {"search": name}
+    data = await get_anime(vars_,less=False)
+    titlez = data.get("title")
+    return titlez
+  
 async def get_anilist_data(name):
     vars_ = {"search": name}
     data = await get_anime(vars_,less=False)
